@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="GameMain.cpp" />
+    <ClCompile Include="WinMain.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="SGAFramework.cpp">
+      <Filter>SGAFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="SGAResourceManager.cpp">
+      <Filter>SGAFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="SGASpriteSheet.cpp">
+      <Filter>SGAFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="SGATimer.cpp">
+      <Filter>SGAFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="SGAActor.cpp">
+      <Filter>SGAFramework\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="SGAActorManager.cpp">
+      <Filter>SGAFramework\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="SGAFSM.cpp">
+      <Filter>SGAFramework\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="SGAProjectile.cpp">
+      <Filter>SGAFramework\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="dxerr.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureMgr.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="Waves.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="d3dUtil.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometryGenerator.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="LightHelper.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="MathHelper.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter6Box.cpp">
+      <Filter>ex6</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter6Grid.cpp">
+      <Filter>ex6</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter6Shapes.cpp">
+      <Filter>ex6</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter6Sukll.cpp">
+      <Filter>ex6</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter6Wave.cpp">
+      <Filter>ex6</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DXUtil.h" />
+    <ClInclude Include="GameMain.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="SGAFramework.h">
+      <Filter>SGAFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="SGAResourceManager.h">
+      <Filter>SGAFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="SGASpriteSheet.h">
+      <Filter>SGAFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="SGATimer.h">
+      <Filter>SGAFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="SGAActor.h">
+      <Filter>SGAFramework\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="SGAActorManager.h">
+      <Filter>SGAFramework\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="SGAFSM.h">
+      <Filter>SGAFramework\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="SGAProjectile.h">
+      <Filter>SGAFramework\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="dxerr.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureMgr.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="Waves.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dUtil.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryGenerator.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="LightHelper.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="MathHelper.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter6Box.h">
+      <Filter>ex6</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter6Grid.h">
+      <Filter>ex6</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter6Shapes.h">
+      <Filter>ex6</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter6Sukll.h">
+      <Filter>ex6</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter6Wave.h">
+      <Filter>ex6</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="SGAFramework">
+      <UniqueIdentifier>{628a6af6-2167-428b-85cb-80c628d5464a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SGAFramework\Actor">
+      <UniqueIdentifier>{880291f5-3347-418f-a712-a710315098f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SGAFramework\FSM">
+      <UniqueIdentifier>{6740e7d7-bfef-48c7-bf95-cf503db701cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DXUtil">
+      <UniqueIdentifier>{82e98054-af37-49a0-8497-edfe8baa42aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ex6">
+      <UniqueIdentifier>{664b5eba-cf39-4f81-8815-81c8ec10c338}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

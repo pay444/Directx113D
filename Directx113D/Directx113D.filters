@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="SGAFramework">
+      <UniqueIdentifier>{9de37c5d-0c16-4f41-b60e-d19e9d10495d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SGAFramework\Actor">
+      <UniqueIdentifier>{8a177d1a-3ccb-48c2-b090-d71524c9214d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SGAFramework\FSM">
+      <UniqueIdentifier>{e60ebf2a-3965-495a-9073-e96c76695197}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DXUtil">
+      <UniqueIdentifier>{dc820c29-70d7-4100-9d49-20d5b48961cd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SGAFramework.h">
+      <Filter>SGAFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="SGAResourceManager.h">
+      <Filter>SGAFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="SGASpriteSheet.h">
+      <Filter>SGAFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="SGATimer.h">
+      <Filter>SGAFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="SGAActor.h">
+      <Filter>SGAFramework\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="SGAActorManager.h">
+      <Filter>SGAFramework\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="SGAProjectile.h">
+      <Filter>SGAFramework\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="SGAFSM.h">
+      <Filter>SGAFramework\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="dxerr.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMain.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUtil.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SGAFramework.cpp">
+      <Filter>SGAFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="SGAResourceManager.cpp">
+      <Filter>SGAFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="SGASpriteSheet.cpp">
+      <Filter>SGAFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="SGATimer.cpp">
+      <Filter>SGAFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="SGAActor.cpp">
+      <Filter>SGAFramework\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="SGAActorManager.cpp">
+      <Filter>SGAFramework\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="SGAProjectile.cpp">
+      <Filter>SGAFramework\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="SGAFSM.cpp">
+      <Filter>SGAFramework\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="dxerr.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMain.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
