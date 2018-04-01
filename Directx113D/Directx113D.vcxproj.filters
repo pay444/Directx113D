@@ -53,19 +53,31 @@
       <Filter>DXUtil</Filter>
     </ClCompile>
     <ClCompile Include="Chapter6Box.cpp">
-      <Filter>ex6</Filter>
+      <Filter>ex\ex6</Filter>
     </ClCompile>
     <ClCompile Include="Chapter6Grid.cpp">
-      <Filter>ex6</Filter>
+      <Filter>ex\ex6</Filter>
     </ClCompile>
     <ClCompile Include="Chapter6Shapes.cpp">
-      <Filter>ex6</Filter>
+      <Filter>ex\ex6</Filter>
     </ClCompile>
     <ClCompile Include="Chapter6Sukll.cpp">
-      <Filter>ex6</Filter>
+      <Filter>ex\ex6</Filter>
     </ClCompile>
     <ClCompile Include="Chapter6Wave.cpp">
-      <Filter>ex6</Filter>
+      <Filter>ex\ex6</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter7Light.cpp">
+      <Filter>ex\ex6\ex7</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter7LitSkull.cpp">
+      <Filter>ex\ex6\ex7</Filter>
+    </ClCompile>
+    <ClCompile Include="Effects.cpp">
+      <Filter>ex\ex6\ex7</Filter>
+    </ClCompile>
+    <ClCompile Include="Vertex.cpp">
+      <Filter>ex\ex6\ex7</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -122,19 +134,31 @@
       <Filter>DXUtil</Filter>
     </ClInclude>
     <ClInclude Include="Chapter6Box.h">
-      <Filter>ex6</Filter>
+      <Filter>ex\ex6</Filter>
     </ClInclude>
     <ClInclude Include="Chapter6Grid.h">
-      <Filter>ex6</Filter>
+      <Filter>ex\ex6</Filter>
     </ClInclude>
     <ClInclude Include="Chapter6Shapes.h">
-      <Filter>ex6</Filter>
+      <Filter>ex\ex6</Filter>
     </ClInclude>
     <ClInclude Include="Chapter6Sukll.h">
-      <Filter>ex6</Filter>
+      <Filter>ex\ex6</Filter>
     </ClInclude>
     <ClInclude Include="Chapter6Wave.h">
-      <Filter>ex6</Filter>
+      <Filter>ex\ex6</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter7Light.h">
+      <Filter>ex\ex6\ex7</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter7LitSkull.h">
+      <Filter>ex\ex6\ex7</Filter>
+    </ClInclude>
+    <ClInclude Include="Effects.h">
+      <Filter>ex\ex6\ex7</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>ex\ex6\ex7</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -153,8 +177,22 @@
     <Filter Include="DXUtil">
       <UniqueIdentifier>{82e98054-af37-49a0-8497-edfe8baa42aa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ex6">
+    <Filter Include="ex">
+      <UniqueIdentifier>{b57ad25f-ecd7-4c21-a836-8eec5f089227}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ex\ex6">
       <UniqueIdentifier>{664b5eba-cf39-4f81-8815-81c8ec10c338}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ex\ex6\ex7">
+      <UniqueIdentifier>{b88a6477-a9a0-418d-903d-ba818f73e4e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ex\fxo">
+      <UniqueIdentifier>{47e7cbe1-4fc6-457a-b28a-0957795753bb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="FX\Basic.fx">
+      <Filter>ex\fxo</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

@@ -235,7 +235,7 @@ void Chapter6Box::BuildFX()
 	ID3D10Blob* compilationMsgs = 0;
 	/*HRESULT hr = D3DX11CompileFromFile(L"FX/color.fx", 0, 0, 0, "fx_5_0",
 	shaderFlags, 0, 0, &compiledShader, &compilationMsgs, 0);*/
-	HRESULT hr = D3DCompileFromFile(L"FX\\color.fx", 0, D3D_COMPILE_STANDARD_FILE_INCLUDE, 0, "fx_5_0",
+	HRESULT hr = D3DCompileFromFile(L"ComputeShader1.hlsl", 0, D3D_COMPILE_STANDARD_FILE_INCLUDE, 0, "fx_5_0",
 		shaderFlags, 0, &compiledShader, &compilationMsgs);
 
 	if (compilationMsgs != 0)

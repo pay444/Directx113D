@@ -264,7 +264,7 @@ void Chapter6Wave::BuildLandGeometryBuffers()
 
 		vertices[i].Pos = p;
 
-		// Color the vertex based on its height.
+		 //Color the vertex based on its height.
 		if (p.y < -10.0f)
 		{
 			// Sandy beach color.
@@ -409,7 +409,7 @@ void Chapter6Wave::BuildVertexLayout()
 	D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 	{
 		{ "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0 },
-	{ "COLOR",    0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, 12, D3D11_INPUT_PER_VERTEX_DATA, 0 }
+		{ "COLOR",    0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, 12, D3D11_INPUT_PER_VERTEX_DATA, 0 }
 	};
 
 	D3DX11_PASS_DESC passDesc;
