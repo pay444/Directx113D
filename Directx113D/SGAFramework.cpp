@@ -35,16 +35,25 @@ void SGAFramework::InitD3D(HWND hWnd)
 
 	ZeroMemory(&scd, sizeof(DXGI_SWAP_CHAIN_DESC));
 	scd.BufferCount = 1;
-	scd.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
+	scd.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM; 
 	scd.BufferDesc.Width = mScreenWidth;
 	scd.BufferDesc.Height = mScreenHeight;
 	scd.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
 	scd.OutputWindow = hWnd;
-	scd.SampleDesc.Count = 4;
+	scd.SampleDesc.Count = 1;
+	scd.SampleDesc.Quality = 0;
 	scd.Windowed = TRUE;
-	scd.Flags = DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH;
+	//scd.Flags = DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH;
 
-	D3D11CreateDeviceAndSwapChain(NULL,
+	//´Ù¸¥Á¡
+	scd.BufferDesc.ScanlineOrdering = DXGI_MODE_SCANLINE_ORDER_UNSPECIFIED;
+	scd.BufferDesc.Scaling = DXGI_MODE_SCALING_UNSPECIFIED;
+	scd.BufferDesc.RefreshRate.Numerator = 60;
+	scd.BufferDesc.RefreshRate.Denominator = 1;
+	scd.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
+	scd.Flags = 0;
+	D3D_FEATURE_LEVEL featureLevel;
+	HRESULT hr = D3D11CreateDeviceAndSwapChain(NULL,
 		D3D_DRIVER_TYPE_HARDWARE,
 		NULL,
 		NULL,
@@ -54,8 +63,17 @@ void SGAFramework::InitD3D(HWND hWnd)
 		&scd,
 		&mspSwapchain,
 		&mspDevice,
-		NULL,
+		&featureLevel,
 		&mspDeviceCon);
+	if (FAILED(hr))
+	{
+		MessageBox(0, L"D3D11CreateDevice Failed.", 0, 0);
+	}
+
+	if (featureLevel != D3D_FEATURE_LEVEL_11_0)
+	{
+		MessageBox(0, L"Direct3D Feature Level 11 unsupported.", 0, 0);
+	}
 
 	SGAResourceManager::Instance().Init(mHwnd, mspDevice.Get());
 
@@ -116,7 +134,7 @@ void SGAFramework::OnResize()
 	mspSwapchain->ResizeBuffers(1, mScreenWidth, mScreenHeight, DXGI_FORMAT_R8G8B8A8_UNORM, 0);
 
 	Microsoft::WRL::ComPtr<ID3D11Texture2D> pBackBuffer;
-	mspSwapchain->GetBuffer(0, __uuidof(ID3D11Texture2D), (LPVOID*)pBackBuffer.GetAddressOf());
+	mspSwapchain->GetBuffer(0, __uuidof(ID3D11Texture2D), reinterpret_cast<void**>(pBackBuffer.GetAddressOf()));//(LPVOID*)pBackBuffer.GetAddressOf()
 
 	mspDevice->CreateRenderTargetView(pBackBuffer.Get(), NULL, mspTargetView.ReleaseAndGetAddressOf());
 
@@ -127,9 +145,13 @@ void SGAFramework::OnResize()
 	dsd.MipLevels = 1;
 	dsd.ArraySize = 1;
 	dsd.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
-	dsd.SampleDesc.Count = 4;
+	dsd.SampleDesc.Count = 1;
+	dsd.SampleDesc.Quality = 0;
 	dsd.Usage = D3D11_USAGE_DEFAULT;
 	dsd.BindFlags = D3D11_BIND_DEPTH_STENCIL;
+
+	dsd.CPUAccessFlags = 0;
+	dsd.MiscFlags = 0;
 
 	mspDevice->CreateTexture2D(&dsd, 0, mspDepthStencilBuffer.ReleaseAndGetAddressOf());
 	mspDevice->CreateDepthStencilView(mspDepthStencilBuffer.Get(), 0, mspDepthStencilView.ReleaseAndGetAddressOf());

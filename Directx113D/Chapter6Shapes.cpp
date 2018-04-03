@@ -129,7 +129,7 @@ void Chapter6Shapes::Render()
 
 	md3dImmediateContext->RSSetState(mWireframeRS);
 
-	UINT stride = sizeof(Vertex);
+	UINT stride = sizeof(VertexC);
 	UINT offset = 0;
 	md3dImmediateContext->IASetVertexBuffers(0, 1, &mVB, &stride, &offset);
 	md3dImmediateContext->IASetIndexBuffer(mIB, DXGI_FORMAT_R32_UINT, 0);
@@ -283,7 +283,7 @@ void Chapter6Shapes::BuildGeometryBuffers()
 	//필요한 정점 특성들을 추출하고, 
 	//모든 메시의 정점들을 하나의 정점 버퍼에 넣는다.
 
-	std::vector<Vertex> vertices(totalVertexCount);
+	std::vector<VertexC> vertices(totalVertexCount);
 	
 	XMFLOAT4 black(0.0f, 0.0f, 0.0f, 1.0f);
 
@@ -315,7 +315,7 @@ void Chapter6Shapes::BuildGeometryBuffers()
 
 	D3D11_BUFFER_DESC vbd;
 	vbd.Usage = D3D11_USAGE_IMMUTABLE;
-	vbd.ByteWidth = sizeof(Vertex) * totalVertexCount;
+	vbd.ByteWidth = sizeof(VertexC) * totalVertexCount;
 	vbd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
 	vbd.CPUAccessFlags = 0;
 	vbd.MiscFlags = 0;

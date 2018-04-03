@@ -169,7 +169,6 @@ void Waves::Update(float dt)
 void Waves::Disturb(UINT i, UINT j, float magnitude)
 {
 	// Don't disturb boundaries.
-	//i= 0 j=1 일때 이사이의 범위에 넘어서지 않도록
 	assert(i > 1 && i < mNumRows-2);
 	assert(j > 1 && j < mNumCols-2);
 

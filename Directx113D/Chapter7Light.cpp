@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Chapter7Light.h"
-#include "d3dUtil.h"
+
 
 #include <d3dcompiler.h>
 #pragma comment (lib, "D3DCompiler.lib")
@@ -275,7 +275,7 @@ void Chapter7Light::Render()
 
 	//HR(mSwapChain->Present(0, 0));
 
-	SGAFramework::Render();
+	//SGAFramework::Render();
 }
 
 void Chapter7Light::OnMouseDown(WPARAM btnState, int x, int y)
@@ -448,30 +448,43 @@ void Chapter7Light::BuildFX()
 	shaderFlags |= D3D10_SHADER_SKIP_OPTIMIZATION;
 #endif
 
-	ID3D10Blob* compiledShader = 0;
-	ID3D10Blob* compilationMsgs = 0;
-	/*HRESULT hr = D3DX11CompileFromFile(L"FX/color.fx", 0, 0, 0, "fx_5_0",
-	shaderFlags, 0, 0, &compiledShader, &compilationMsgs, 0);*/
-	HRESULT hr = D3DCompileFromFile(L"FX\\Lighting.fx", 0, D3D_COMPILE_STANDARD_FILE_INCLUDE, 0, "fx_5_0",
-		shaderFlags, 0, &compiledShader, &compilationMsgs);
+	//ID3D10Blob* compiledShader = 0;
+	//ID3D10Blob* compilationMsgs = 0;
+	///*HRESULT hr = D3DX11CompileFromFile(L"FX/color.fx", 0, 0, 0, "fx_5_0",
+	//shaderFlags, 0, 0, &compiledShader, &compilationMsgs, 0);*/
+	//HRESULT hr = D3DCompileFromFile(L"FX\\Lighting.fx", 0, D3D_COMPILE_STANDARD_FILE_INCLUDE, 0, "fx_5_0",
+	//	shaderFlags, 0, &compiledShader, &compilationMsgs);
 
-	if (compilationMsgs != 0)
-	{
-		MessageBoxA(0, (char*)compilationMsgs->GetBufferPointer(), 0, 0);
-		ReleaseCOM(compilationMsgs);
-	}
+	//if (compilationMsgs != 0)
+	//{
+	//	MessageBoxA(0, (char*)compilationMsgs->GetBufferPointer(), 0, 0);
+	//	ReleaseCOM(compilationMsgs);
+	//}
 
-	if (FAILED(hr))
-	{
-		//DXTrace(__FILE__, (DWORD)__LINE__, hr, L"D3DX11CompileFromFile", true);
-		DXTrace(__FILEW__, (DWORD)__LINE__, hr, L"D3DX11CompileFromFile", true);
-	}
+	//if (FAILED(hr))
+	//{
+	//	//DXTrace(__FILE__, (DWORD)__LINE__, hr, L"D3DX11CompileFromFile", true);
+	//	DXTrace(__FILEW__, (DWORD)__LINE__, hr, L"D3DX11CompileFromFile", true);
+	//}
 
-	HR(D3DX11CreateEffectFromMemory(compiledShader->GetBufferPointer(),
-		compiledShader->GetBufferSize(),
+	//HR(D3DX11CreateEffectFromMemory(compiledShader->GetBufferPointer(),
+	//	compiledShader->GetBufferSize(),
+	//	0, md3dDevice, &mFX));
+
+	//ReleaseCOM(compiledShader);
+
+	std::ifstream fin("fx/Lighting.fxo", std::ios::binary);
+
+	fin.seekg(0, std::ios_base::end);
+	int size = (int)fin.tellg();
+	fin.seekg(0, std::ios_base::beg);
+	std::vector<char> compiledShader(size);
+
+	fin.read(&compiledShader[0], size);
+	fin.close();
+
+	HR(D3DX11CreateEffectFromMemory(&compiledShader[0], size,
 		0, md3dDevice, &mFX));
-
-	ReleaseCOM(compiledShader);
 
 	mTech = mFX->GetTechniqueByName("LightTech");
 	mfxWorldViewProj = mFX->GetVariableByName("gWorldViewProj")->AsMatrix();

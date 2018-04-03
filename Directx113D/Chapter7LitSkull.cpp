@@ -104,6 +104,7 @@ void Chapter7LitSkull::InitD3D(HWND hWnd)
 	//wireframeDesc.DepthClipEnable = true;
 
 	//HR(md3dDevice->CreateRasterizerState(&wireframeDesc, &mWireframeRS));
+
 	BuildShapeGeometryBuffers();
 	BuildSkullGeometryBuffers();
 	//BuildFX();
@@ -209,6 +210,8 @@ void Chapter7LitSkull::Render()
 		break;
 	}
 
+	//md3dImmediateContext->RSSetState(mWireframeRS);
+	//md3dImmediateContext->RSSetState(0);
 
 	D3DX11_TECHNIQUE_DESC techDesc;
 	activeTech->GetDesc(&techDesc);
@@ -293,12 +296,12 @@ void Chapter7LitSkull::Render()
 		md3dImmediateContext->DrawIndexed(mSkullIndexCount, 0, 0);
 
 		// Restore default.
-		//md3dImmediateContext->RSSetState(0);
+		
 	}
 
 	//HR(mSwapChain->Present(0, 0));
 
-	SGAFramework::Render();
+	//SGAFramework::Render();
 }
 
 void Chapter7LitSkull::OnMouseDown(WPARAM btnState, int x, int y)

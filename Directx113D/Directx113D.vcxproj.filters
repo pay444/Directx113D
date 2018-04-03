@@ -52,8 +52,17 @@
     <ClCompile Include="MathHelper.cpp">
       <Filter>DXUtil</Filter>
     </ClCompile>
-    <ClCompile Include="Chapter6Box.cpp">
-      <Filter>ex\ex6</Filter>
+    <ClCompile Include="Chapter7Light.cpp">
+      <Filter>ex\ex7</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter7LitSkull.cpp">
+      <Filter>ex\ex7</Filter>
+    </ClCompile>
+    <ClCompile Include="Effects.cpp">
+      <Filter>ex\ex7</Filter>
+    </ClCompile>
+    <ClCompile Include="Vertex.cpp">
+      <Filter>ex\ex7</Filter>
     </ClCompile>
     <ClCompile Include="Chapter6Grid.cpp">
       <Filter>ex\ex6</Filter>
@@ -66,18 +75,6 @@
     </ClCompile>
     <ClCompile Include="Chapter6Wave.cpp">
       <Filter>ex\ex6</Filter>
-    </ClCompile>
-    <ClCompile Include="Chapter7Light.cpp">
-      <Filter>ex\ex6\ex7</Filter>
-    </ClCompile>
-    <ClCompile Include="Chapter7LitSkull.cpp">
-      <Filter>ex\ex6\ex7</Filter>
-    </ClCompile>
-    <ClCompile Include="Effects.cpp">
-      <Filter>ex\ex6\ex7</Filter>
-    </ClCompile>
-    <ClCompile Include="Vertex.cpp">
-      <Filter>ex\ex6\ex7</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -133,8 +130,17 @@
     <ClInclude Include="MathHelper.h">
       <Filter>DXUtil</Filter>
     </ClInclude>
-    <ClInclude Include="Chapter6Box.h">
-      <Filter>ex\ex6</Filter>
+    <ClInclude Include="Chapter7Light.h">
+      <Filter>ex\ex7</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter7LitSkull.h">
+      <Filter>ex\ex7</Filter>
+    </ClInclude>
+    <ClInclude Include="Effects.h">
+      <Filter>ex\ex7</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>ex\ex7</Filter>
     </ClInclude>
     <ClInclude Include="Chapter6Grid.h">
       <Filter>ex\ex6</Filter>
@@ -147,18 +153,6 @@
     </ClInclude>
     <ClInclude Include="Chapter6Wave.h">
       <Filter>ex\ex6</Filter>
-    </ClInclude>
-    <ClInclude Include="Chapter7Light.h">
-      <Filter>ex\ex6\ex7</Filter>
-    </ClInclude>
-    <ClInclude Include="Chapter7LitSkull.h">
-      <Filter>ex\ex6\ex7</Filter>
-    </ClInclude>
-    <ClInclude Include="Effects.h">
-      <Filter>ex\ex6\ex7</Filter>
-    </ClInclude>
-    <ClInclude Include="Vertex.h">
-      <Filter>ex\ex6\ex7</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -183,15 +177,18 @@
     <Filter Include="ex\ex6">
       <UniqueIdentifier>{664b5eba-cf39-4f81-8815-81c8ec10c338}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ex\ex6\ex7">
-      <UniqueIdentifier>{b88a6477-a9a0-418d-903d-ba818f73e4e4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ex\fxo">
       <UniqueIdentifier>{47e7cbe1-4fc6-457a-b28a-0957795753bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ex\ex7">
+      <UniqueIdentifier>{b88a6477-a9a0-418d-903d-ba818f73e4e4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="FX\Basic.fx">
+      <Filter>ex\fxo</Filter>
+    </FxCompile>
+    <FxCompile Include="FX\Lighting.fx">
       <Filter>ex\fxo</Filter>
     </FxCompile>
   </ItemGroup>

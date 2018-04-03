@@ -84,7 +84,7 @@ void GameMain::Render()
 	md3dImmediateContext->IASetInputLayout(mInputLayout);
 	md3dImmediateContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
-	UINT stride = sizeof(Vertex);
+	UINT stride = sizeof(VertexC);
 	UINT offset = 0;
 	md3dImmediateContext->IASetVertexBuffers(0, 1, &mBoxVB, &stride, &offset);
 	md3dImmediateContext->IASetIndexBuffer(mBoxIB, DXGI_FORMAT_R32_UINT, 0);
@@ -107,7 +107,7 @@ void GameMain::Render()
 
 	//HR(mSwapChain->Present(0, 0));
 
-	SGAFramework::Render();
+	//SGAFramework::Render();
 }
 
 void GameMain::OnMouseDown(WPARAM btnState, int x, int y)
@@ -164,7 +164,7 @@ void GameMain::BuildGeometryBuffers()
 		{ XMFLOAT3(+1.0f, -1.0f, +1.0f), (const float*)&Colors::Magenta }
 	};*/
 
-	Vertex vertices[] =
+	VertexC vertices[] =
 	{
 		{ XMFLOAT3(-1.0f, -1.0f, -1.0f), XMFLOAT4((const float*)&DirectX::Colors::White) },
 		{ XMFLOAT3(-1.0f, +1.0f, -1.0f), XMFLOAT4((const float*)&DirectX::Colors::Black) },
@@ -178,7 +178,7 @@ void GameMain::BuildGeometryBuffers()
 
 	D3D11_BUFFER_DESC vbd;
 	vbd.Usage = D3D11_USAGE_IMMUTABLE;
-	vbd.ByteWidth = sizeof(Vertex) * 8;
+	vbd.ByteWidth = sizeof(VertexC) * 8;
 	vbd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
 	vbd.CPUAccessFlags = 0;
 	vbd.MiscFlags = 0;
@@ -269,8 +269,8 @@ void GameMain::BuildVertexLayout()
 		{ "COLOR",    0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, 12, D3D11_INPUT_PER_VERTEX_DATA, 0 }
 	};
 
-	//D3DX11_PASS_DESC passDesc;
-	//mTech->GetPassByIndex(0)->GetDesc(&passDesc);
-	//HR(md3dDevice->CreateInputLayout(vertexDesc, 2, passDesc.pIAInputSignature,
-	//	passDesc.IAInputSignatureSize, &mInputLayout));
+	D3DX11_PASS_DESC passDesc;
+	mTech->GetPassByIndex(0)->GetDesc(&passDesc);
+	HR(md3dDevice->CreateInputLayout(vertexDesc, 2, passDesc.pIAInputSignature,
+		passDesc.IAInputSignatureSize, &mInputLayout));
 }

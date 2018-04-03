@@ -112,7 +112,7 @@ void Chapter6Sukll::Render()
 
 	md3dImmediateContext->RSSetState(mWireframeRS);
 
-	UINT stride = sizeof(Vertex);
+	UINT stride = sizeof(VertexC);
 	UINT offset = 0;
 	md3dImmediateContext->IASetVertexBuffers(0, 1, &mVB, &stride, &offset);
 	md3dImmediateContext->IASetIndexBuffer(mIB, DXGI_FORMAT_R32_UINT, 0);
@@ -200,7 +200,7 @@ void Chapter6Sukll::BuildGeometryBuffers()
 	float nx, ny, nz;
 	XMFLOAT4 black(0.0f, 0.0f, 0.0f, 1.0f);
 
-	std::vector<Vertex> vertices(vcount);
+	std::vector<VertexC> vertices(vcount);
 	for (UINT i = 0; i < vcount; ++i)
 	{
 		fin >> vertices[i].Pos.x >> vertices[i].Pos.y >> vertices[i].Pos.z;
@@ -225,7 +225,7 @@ void Chapter6Sukll::BuildGeometryBuffers()
 	fin.close();
 	D3D11_BUFFER_DESC vbd;
 	vbd.Usage = D3D11_USAGE_IMMUTABLE;
-	vbd.ByteWidth = sizeof(Vertex) * vcount;
+	vbd.ByteWidth = sizeof(VertexC) * vcount;
 	vbd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
 	vbd.CPUAccessFlags = 0;
 	vbd.MiscFlags = 0;

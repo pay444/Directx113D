@@ -55,6 +55,7 @@ BasicEffect* Effects::BasicFX = 0;
 void Effects::InitAll(ID3D11Device* device)
 {
 	BasicFX = new BasicEffect(device, L"FX/Basic.fxo");
+	//BasicFX = new BasicEffect(device, L"FX/Lighting.fxo");
 }
 
 void Effects::DestroyAll()

@@ -96,7 +96,7 @@ void Chapter6Grid::Render()
 	md3dImmediateContext->IASetInputLayout(mInputLayout);
 	md3dImmediateContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
-	UINT stride = sizeof(Vertex);
+	UINT stride = sizeof(VertexC);
 	UINT offset = 0;
 	md3dImmediateContext->IASetVertexBuffers(0, 1, &mHillVB, &stride, &offset);
 	md3dImmediateContext->IASetIndexBuffer(mHillIB, DXGI_FORMAT_R32_UINT, 0);
@@ -184,7 +184,7 @@ void Chapter6Grid::BuildGeometryBuffers()
 	//이를 통해서 모래 색의 해변과 녹색의 언덕, 
 	//그리고 흰눈 덮인 봉우리 같은 모습이 만들어진다.
 
-	std::vector<Vertex> vertices(grid.Vertices.size());
+	std::vector<VertexC> vertices(grid.Vertices.size());
 	//size_t = unsigned int
 	for (size_t i = 0; i < grid.Vertices.size(); ++i)
 	{
@@ -225,7 +225,7 @@ void Chapter6Grid::BuildGeometryBuffers()
 
 	D3D11_BUFFER_DESC vbd;
 	vbd.Usage = D3D11_USAGE_IMMUTABLE;
-	vbd.ByteWidth = sizeof(Vertex) * grid.Vertices.size();
+	vbd.ByteWidth = sizeof(VertexC) * grid.Vertices.size();
 	vbd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
 	vbd.CPUAccessFlags = 0;
 	vbd.MiscFlags = 0;

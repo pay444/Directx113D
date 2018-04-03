@@ -4,6 +4,7 @@
 #include "GeometryGenerator.h"
 #include "Waves.h"
 #include "MathHelper.h"
+#include "d3dUtil.h"
 
 struct Vertex
 {

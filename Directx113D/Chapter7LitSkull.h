@@ -79,7 +79,7 @@ private:
 
 	ID3D11InputLayout* mInputLayout;
 
-	ID3D11RasterizerState* mWireframeRS;
+	//ID3D11RasterizerState* mWireframeRS;
 
 	// Define transformations from local spaces to world space.
 	// Define transformations from local spaces to world space.

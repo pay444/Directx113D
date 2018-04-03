@@ -3,7 +3,7 @@
 #include <d3dx11effect.h>
 #include "GeometryGenerator.h"
 
-struct Vertex
+struct VertexC
 {
 	XMFLOAT3 Pos;
 	XMFLOAT4 Color;
