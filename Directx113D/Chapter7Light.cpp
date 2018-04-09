@@ -178,7 +178,7 @@ void Chapter7Light::Update(float dt)
 	HR(md3dImmediateContext->Map(mWavesVB, 0, D3D11_MAP_WRITE_DISCARD, 
 		0, &mappedData));
 
-	Vertex* v = reinterpret_cast<Vertex*>(mappedData.pData);
+	VertexN* v = reinterpret_cast<VertexN*>(mappedData.pData);
 	for (UINT i = 0; i < mWaves.VertexCount(); ++i)
 	{
 		v[i].Pos = mWaves[i];
@@ -214,7 +214,7 @@ void Chapter7Light::Render()
 	md3dImmediateContext->IASetInputLayout(mInputLayout);
 	md3dImmediateContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
-	UINT stride = sizeof(Vertex);
+	UINT stride = sizeof(VertexN);
 	UINT offset = 0;
 
 	XMMATRIX view = XMLoadFloat4x4(&mView);
@@ -354,7 +354,7 @@ void Chapter7Light::BuildLandGeometryBuffers()
 	// sandy looking beaches, grassy low hills, and snow mountain peaks.
 	//
 
-	std::vector<Vertex> vertices(grid.Vertices.size());
+	std::vector<VertexN> vertices(grid.Vertices.size());
 	for (size_t i = 0; i < grid.Vertices.size(); ++i)
 	{
 		XMFLOAT3 p = grid.Vertices[i].Position;
@@ -367,7 +367,7 @@ void Chapter7Light::BuildLandGeometryBuffers()
 
 	D3D11_BUFFER_DESC vbd;
 	vbd.Usage = D3D11_USAGE_IMMUTABLE;
-	vbd.ByteWidth = sizeof(Vertex) * grid.Vertices.size();
+	vbd.ByteWidth = sizeof(VertexN) * grid.Vertices.size();
 	vbd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
 	vbd.CPUAccessFlags = 0;
 	vbd.MiscFlags = 0;
@@ -397,7 +397,7 @@ void Chapter7Light::BuildWavesGeometryBuffers()
 
 	D3D11_BUFFER_DESC vbd;
 	vbd.Usage = D3D11_USAGE_DYNAMIC;
-	vbd.ByteWidth = sizeof(Vertex) * mWaves.VertexCount();
+	vbd.ByteWidth = sizeof(VertexN) * mWaves.VertexCount();
 	vbd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
 	vbd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
 	vbd.MiscFlags = 0;

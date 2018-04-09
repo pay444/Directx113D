@@ -82,62 +82,26 @@ void ComputeDirectionalLight(Material mat, DirectionalLight L,
 	if( diffuseFactor < 0.0f )
 	{
 		float3 v         = reflect(-lightVec, normal);
-		float specFactor = pow(max(dot(v, toEye), 0.0f), mat.Specular.w); 
-
-		diffuse = 0.4f * mat.Diffuse * L.Diffuse;
-		if (0.0f <= specFactor <= 0.1f)
-		{
-			spec = 0.0f * mat.Specular * L.Specular;
-		}
-		else if (0.1f < specFactor <= 0.8f)
-		{
-			spec = 0.5f * mat.Specular * L.Specular;
-		}
-		else if (0.8f < specFactor <= 1.0f)
-		{
-			spec = 0.8f * mat.Specular * L.Specular;
-		}
-		
+		float specFactor = 0.4f;
+					
+		diffuse = diffuseFactor * mat.Diffuse * L.Diffuse;
+		spec    = specFactor * mat.Specular * L.Specular;
 	}
-	else if( 0.0f < diffuseFactor  <= 0.5f)
+	if( 0.0f < diffuseFactor  <= 0.5f)
 	{
 		float3 v         = reflect(-lightVec, normal);
-		float specFactor = pow(max(dot(v, toEye), 0.0f), mat.Specular.w); 
-		
+		float specFactor = 0.6f;
 					
-		diffuse = 0.6f * mat.Diffuse * L.Diffuse;
-		if (0.0f <= specFactor <= 0.1f)
-		{
-			spec = 0.0f * mat.Specular * L.Specular;
-		}
-		else if (0.1f < specFactor <= 0.8f)
-		{
-			spec = 0.5f * mat.Specular * L.Specular;
-		}
-		else if (0.8f < specFactor <= 1.0f)
-		{
-			spec = 0.8f * mat.Specular * L.Specular;
-		}
+		diffuse = diffuseFactor * mat.Diffuse * L.Diffuse;
+		spec    = specFactor * mat.Specular * L.Specular;
 	}
-	else if( 0.5f < diffuseFactor  <= 1.0f )
+	if( 0.5f < diffuseFactor  <= 1.0f )
 	{
 		float3 v         = reflect(-lightVec, normal);
-		float specFactor = pow(max(dot(v, toEye), 0.0f), mat.Specular.w); 
-		
+		float specFactor = 1.0f;
 					
-		diffuse = 1.0f * mat.Diffuse * L.Diffuse;
-		if (0.0f <= specFactor <= 0.1f)
-		{
-			spec = 0.0f * mat.Specular * L.Specular;
-		}
-		else if (0.1f < specFactor <= 0.8f)
-		{
-			spec = 0.5f * mat.Specular * L.Specular;
-		}
-		else if (0.8f < specFactor <= 1.0f)
-		{
-			spec = 0.8f * mat.Specular * L.Specular;
-		}
+		diffuse = diffuseFactor * mat.Diffuse * L.Diffuse;
+		spec    = specFactor * mat.Specular * L.Specular;
 	}
 }
 
@@ -180,62 +144,26 @@ void ComputePointLight(Material mat, PointLight L, float3 pos, float3 normal, fl
 	if( diffuseFactor < 0.0f )
 	{
 		float3 v         = reflect(-lightVec, normal);
-		float specFactor = pow(max(dot(v, toEye), 0.0f), mat.Specular.w);
-		
+		float specFactor = 0.4f;
 					
-		diffuse = 0.4f * mat.Diffuse * L.Diffuse;
-		if (0.0f <= specFactor <= 0.1f)
-		{
-			spec = 0.0f * mat.Specular * L.Specular;
-		}
-		else if (0.1f < specFactor <= 0.8f)
-		{
-			spec = 0.5f * mat.Specular * L.Specular;
-		}
-		else if (0.8f < specFactor <= 1.0f)
-		{
-			spec = 0.8f * mat.Specular * L.Specular;
-		}
+		diffuse = diffuseFactor * mat.Diffuse * L.Diffuse;
+		spec    = specFactor * mat.Specular * L.Specular;
 	}
-	else if( 0.0f < diffuseFactor  <= 0.5f)
+	if( 0.0f < diffuseFactor  <= 0.5f)
 	{
 		float3 v         = reflect(-lightVec, normal);
-		float specFactor = pow(max(dot(v, toEye), 0.0f), mat.Specular.w);
-		
+		float specFactor = 0.6f;
 					
-		diffuse = 0.6f * mat.Diffuse * L.Diffuse;
-		if (0.0f <= specFactor <= 0.1f)
-		{
-			spec = 0.0f * mat.Specular * L.Specular;
-		}
-		else if (0.1f < specFactor <= 0.8f)
-		{
-			spec = 0.5f * mat.Specular * L.Specular;
-		}
-		else if (0.8f < specFactor <= 1.0f)
-		{
-			spec = 0.8f * mat.Specular * L.Specular;
-		}
+		diffuse = diffuseFactor * mat.Diffuse * L.Diffuse;
+		spec    = specFactor * mat.Specular * L.Specular;
 	}
-	else if( 0.5f < diffuseFactor  <= 1.0f )
+	if( 0.5f < diffuseFactor  <= 1.0f )
 	{
 		float3 v         = reflect(-lightVec, normal);
-		float specFactor = pow(max(dot(v, toEye), 0.0f), mat.Specular.w); 
-		
+		float specFactor = 1.0f;
 					
-		diffuse = 1.0f * mat.Diffuse * L.Diffuse;
-		if (0.0f <= specFactor <= 0.1f)
-		{
-			spec = 0.0f * mat.Specular * L.Specular;
-		}
-		else if (0.1f < specFactor <= 0.8f)
-		{
-			spec = 0.5f * mat.Specular * L.Specular;
-		}
-		else if (0.8f < specFactor <= 1.0f)
-		{
-			spec = 0.8f * mat.Specular * L.Specular;
-		}
+		diffuse = diffuseFactor * mat.Diffuse * L.Diffuse;
+		spec    = specFactor * mat.Specular * L.Specular;
 	}
 
 	// Attenuate
@@ -281,64 +209,29 @@ void ComputeSpotLight(Material mat, SpotLight L, float3 pos, float3 normal, floa
 
 	// Flatten to avoid dynamic branching.
 	[flatten]
-	if( diffuseFactor  <=0.0f)
+	if( 0.0f <= diffuseFactor  <=0.1f)
 	{
 		float3 v         = reflect(-lightVec, normal);
-		float specFactor = pow(max(dot(v, toEye), 0.0f), mat.Specular.w); 
+		float specFactor = 0.0f;
 					
-		diffuse = 0.4f * mat.Diffuse * L.Diffuse;
-		if (0.0f <= specFactor <= 0.1f)
-		{
-			spec = 0.0f * mat.Specular * L.Specular;
-		}
-		else if (0.1f < specFactor <= 0.8f)
-		{
-			spec = 0.5f * mat.Specular * L.Specular;
-		}
-		else if (0.8f < specFactor <= 1.0f)
-		{
-			spec = 0.8f * mat.Specular * L.Specular;
-		}
+		diffuse = diffuseFactor * mat.Diffuse * L.Diffuse;
+		spec    = specFactor * mat.Specular * L.Specular;
 	}
-	if(  0.0f < diffuseFactor  <=0.5f)
+	if(  0.1f <= diffuseFactor  <=0.8f)
 	{
 		float3 v         = reflect(-lightVec, normal);
-		float specFactor = pow(max(dot(v, toEye), 0.0f), mat.Specular.w); 
-		
+		float specFactor =0.5f;
 					
-		diffuse = 0.6f * mat.Diffuse * L.Diffuse;
-		if (0.0f <= specFactor <= 0.1f)
-		{
-			spec = 0.0f * mat.Specular * L.Specular;
-		}
-		else if (0.1f < specFactor <= 0.8f)
-		{
-			spec = 0.5f * mat.Specular * L.Specular;
-		}
-		else if (0.8f < specFactor <= 1.0f)
-		{
-			spec = 0.8f * mat.Specular * L.Specular;
-		}
+		diffuse = diffuseFactor * mat.Diffuse * L.Diffuse;
+		spec    = specFactor * mat.Specular * L.Specular;
 	}
-	if(  0.5f < diffuseFactor  <=1.0f)
+	if(  0.8f <= diffuseFactor  <=1.0f)
 	{
 		float3 v         = reflect(-lightVec, normal);
-		float specFactor = pow(max(dot(v, toEye), 0.0f), mat.Specular.w); 
-		
+		float specFactor = 0.8f;
 					
-		diffuse = 1.0f * mat.Diffuse * L.Diffuse;
-		if (0.0f <= specFactor <= 0.1f)
-		{
-			spec = 0.0f * mat.Specular * L.Specular;
-		}
-		else if (0.1f < specFactor <= 0.8f)
-		{
-			spec = 0.5f * mat.Specular * L.Specular;
-		}
-		else if (0.8f < specFactor <= 1.0f)
-		{
-			spec = 0.8f * mat.Specular * L.Specular;
-		}
+		diffuse = diffuseFactor * mat.Diffuse * L.Diffuse;
+		spec    = specFactor * mat.Specular * L.Specular;
 	}
 	// Scale by spotlight factor and attenuate.
 	float spot = pow(max(dot(-lightVec, L.Direction), 0.0f), L.Spot);

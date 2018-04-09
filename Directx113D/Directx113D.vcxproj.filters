@@ -191,5 +191,8 @@
     <FxCompile Include="FX\Lighting.fx">
       <Filter>ex\fxo</Filter>
     </FxCompile>
+    <FxCompile Include="FX\LightHelper.fx">
+      <Filter>ex\fxo</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

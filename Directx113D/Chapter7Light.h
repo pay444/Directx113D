@@ -6,7 +6,7 @@
 #include "MathHelper.h"
 #include "d3dUtil.h"
 
-struct Vertex
+struct VertexN
 {
 	XMFLOAT3 Pos;
 	XMFLOAT3 NormalL;
